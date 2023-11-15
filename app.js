@@ -28,8 +28,6 @@ app.get('/api/plants/:id', (req, res) =>{
 
   const { id } = req.params;
 
-  console.log(id);
-
   db.pool.query('SELECT * FROM plants WHERE id=$1', [id], (error, result) =>{
     if(error) {
       throw error;
@@ -37,8 +35,20 @@ app.get('/api/plants/:id', (req, res) =>{
 
     res.status(200).send(result.rows[0]);
   });
-
 })
+
+// create a new plant
+app.post('/api/plants', (req, res) =>{
+
+  const { name, species } = req.body;
+
+  db.pool.query('INSERT INTO plants (name, species) VALUES ($1, $2)', [name, species], (error, result) =>{
+    if(error) {
+      throw error;
+    }
+    res.status(200).send("Plant created successfully!");
+  });
+});
 
 
 app.listen(port, () => {
