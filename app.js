@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 5000; // Wähle einen Port deiner Wahl
+const port = 5000;
 const db = require('./postgres-config');
 
-app.use(express.json()); // Erlaube JSON-Anfragen
+app.use(express.json()); // Allow JSON queries
 
-// Definiere Routen und Middleware hier
+// Define routes and middleware
 
 app.get('/', (req,res) =>{
   res.send("Hello world");
@@ -51,7 +51,6 @@ app.post('/api/plants', (req, res) => {
 });
 
 // update a plant
-
 app.patch('/api/plants/:id', (req, res) => {
 
   const { id } = req.params;
@@ -75,5 +74,5 @@ app.delete('/api/plants/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server läuft auf Port ${port}`);
+  console.log(`Listening on port ${port} ...`);
 });
