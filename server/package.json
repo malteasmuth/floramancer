@@ -1,0 +1,15 @@
+{
+  "name": "floramancer",
+  "version": "0.0.1",
+  "description": "A small app that helps you care for your plants",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "malte.asmuth@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  }
+}
