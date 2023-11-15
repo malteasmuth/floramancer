@@ -7,11 +7,11 @@ app.use(express.json()); // Erlaube JSON-Anfragen
 
 // Definiere Routen und Middleware hier
 
-
 app.get('/', (req,res) =>{
   res.send("Hello world");
 });
 
+// get all plants
 app.get('/api/plants', (req, res) => {
 
   db.pool.query('SELECT * FROM plants;', (error, result) => {
@@ -22,6 +22,23 @@ app.get('/api/plants', (req, res) => {
     res.status(201).send(result.rows);
   });
 });
+
+// get one plant
+app.get('/api/plants/:id', (req, res) =>{
+
+  const { id } = req.params;
+
+  console.log(id);
+
+  db.pool.query('SELECT * FROM plants WHERE id=$1', [id], (error, result) =>{
+    if(error) {
+      throw error;
+    }
+
+    res.status(200).send(result.rows[0]);
+  });
+
+})
 
 
 app.listen(port, () => {
