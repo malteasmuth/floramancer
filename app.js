@@ -38,7 +38,7 @@ app.get('/api/plants/:id', (req, res) =>{
 })
 
 // create a new plant
-app.post('/api/plants', (req, res) =>{
+app.post('/api/plants', (req, res) => {
 
   const { name, species } = req.body;
 
@@ -50,6 +50,29 @@ app.post('/api/plants', (req, res) =>{
   });
 });
 
+// update a plant
+
+app.patch('/api/plants/:id', (req, res) => {
+
+  const { id } = req.params;
+  const { name, species } = req.body;
+
+  db.pool.query('UPDATE plants SET name = $1, species = $2 WHERE id = $3', [name, species, id], (error, result) => {
+    if(error) throw error;
+    res.status(200).send("Plant updated!");
+  });
+});
+
+// delete a plant
+app.delete('/api/plants/:id', (req, res) => {
+
+  const { id } = req.params;
+
+  db.pool.query('DELETE FROM plants WHERE id=$1', [id], (error, result) =>{
+    if (error) throw error;
+    res.status(200).send(`Plant with id ${id} deleted successfully`);
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server läuft auf Port ${port}`);
