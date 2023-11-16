@@ -9,6 +9,7 @@
     </div>
     <div class="grid-wrapper">
       <div class="grid-card" v-for="plant in plants">
+        <img class="card-img-rounded" src="#">
         <h3>{{ plant.name }}</h3>
         <h3>{{ plant.species }}</h3>
         <button>See details</button>

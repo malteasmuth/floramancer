@@ -14,4 +14,13 @@ export const plants = [{
   id: 10,
   name: "Clavicus",
   species: "Sunflower"
-}]
+}, {
+  id: 12,
+  name: "Norman",
+  species: "Monstera"
+}, {
+  id: 13,
+  name: "Andrea",
+  species: "Flower"
+},
+]

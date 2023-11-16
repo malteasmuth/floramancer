@@ -1,12 +1,18 @@
+body{
+  background-color: black;
+  color: whitesmoke;
+}
+
 .hero-section{
   height: 80vh;
   width: 100%;
-  background-color: #4bfc8c;
+  background-color: #126A3F;
+  border-radius: 2px;
 }
 
 .hero-headers{
   padding: 90px;
-  color: #668571;
+  color: whitesmoke;
   font-weight: bold;
   font-family: arial;
 }
@@ -20,8 +26,8 @@
 }
 
 .grid-wrapper{
-  background-color: grey;
-  color: white;
+  background-color: #fbebce;
+  color: #333;;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -29,9 +35,22 @@
 }
 
 .grid-card{
-  background-color: lightgray;
+  margin: 20px;
+  background-color: #C4A484;
+  height: 300px;
+  border-radius: 10px;
   color: black;
   padding: 5px;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px #65523f;
+  text-align: center;
+}
+
+.card-img-rounded{
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.placeholders{
   text-align: center;
 }
