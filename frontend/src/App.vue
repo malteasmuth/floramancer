@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello from Vue!</h1>
+  <h1>Navbar placeholder</h1>
   <router-view></router-view>
 </template>
 

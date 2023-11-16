@@ -1,0 +1,37 @@
+.hero-section{
+  height: 80vh;
+  width: 100%;
+  background-color: #4bfc8c;
+}
+
+.hero-headers{
+  padding: 90px;
+  color: #668571;
+  font-weight: bold;
+  font-family: arial;
+}
+
+.hero-section h1{
+  font-size: 72px;
+}
+
+.hero-section h3{
+  font-size: 47px;
+}
+
+.grid-wrapper{
+  background-color: grey;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid-card{
+  background-color: lightgray;
+  color: black;
+  padding: 5px;
+  box-shadow: 5px 5px 5px black;
+  text-align: center;
+}
