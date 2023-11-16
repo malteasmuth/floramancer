@@ -1,6 +1,20 @@
-import './assets/main.css'
+import { createApp } from 'vue';
+import App from './App.vue';
+import * as VueRouter from "vue-router";
+import PlantsPage from "./pages/PlantsPage.vue";
+import PlantDetailsPage from "./pages/PlantDetailsPage.vue";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-
-createApp(App).mount('#app')
+createApp(App)
+.use(VueRouter.createRouter({
+  history: VueRouter.createWebHistory(import.meta.env.DEV),
+  routes: [{
+    path: "/plants",
+    component: PlantsPage,
+  },
+  {
+    path: "/plants/:id",
+    component: PlantDetailsPage,
+  }
+]
+}))
+.mount('#app');
