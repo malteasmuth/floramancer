@@ -4,7 +4,8 @@
   <div class="placeholders">
     <h1>Footer placeholder</h1>
     <p>Site in development </p>
-    <p>Foto von Kaufmann Mercantile auf Unsplash</p>
+    <font-awesome-icon :icon="['fas', 'seedling']" />
+    <p>Picture by Kaufmann Mercantile on Unsplash</p>
   </div>
 </template>
 

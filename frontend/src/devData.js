@@ -1,15 +1,16 @@
 export const plants = [{
   id: 1,
   name: "Angela",
-  species: "gum tree"
+  species: "Gum tree",
+  age: 2,
 }, {
   id: 6,
   name: "Peter",
-  species: "cactus"
+  species: "Cactus"
 }, {
   id: 9,
   name: "Lovely Flower",
-  species: "pine tree"
+  species: "Pine tree"
 }, {
   id: 10,
   name: "Clavicus",
