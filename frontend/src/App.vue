@@ -3,8 +3,8 @@
   <router-view></router-view>
   <div class="placeholders">
     <h1>Footer placeholder</h1>
-    <p>Site in development </p>
-    <font-awesome-icon :icon="['fas', 'seedling']" />
+    <p>Site growing</p>
+    <font-awesome-icon icon="fa-solid fa-seedling" />
     <p>Picture by Kaufmann Mercantile on Unsplash</p>
   </div>
 </template>

@@ -89,3 +89,24 @@ body{
   border: 0.1em solid black;
   box-shadow: none;
 }
+
+.plant-details-container{
+  height: 90vh;
+  background-color: #C4A484;
+  margin: auto;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+}
+
+.plant-img-container{
+  border-radius: 10px;
+  width: 70%;
+  background-image:
+    url("./assets/images/the-bialons-MVCu1JIYuoM-unsplash.jpg");
+  background-size: cover;
+  background-position: 15%;
+  clip-path: ellipse(350px 450px at 20%);
+  transition-duration: 500ms;
+}
