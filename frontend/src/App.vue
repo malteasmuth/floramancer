@@ -4,6 +4,7 @@
   <div class="placeholders">
     <h1>Footer placeholder</h1>
     <p>Site in development </p>
+    <p>Foto von Kaufmann Mercantile auf Unsplash</p>
   </div>
 </template>
 
