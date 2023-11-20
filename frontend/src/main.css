@@ -54,3 +54,22 @@ body{
 .placeholders{
   text-align: center;
 }
+
+.button-pill-yellow{
+  font-size: 14px;
+  padding: 0.5em 1em;
+  margin: 0.25em;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  background: #ebd534;
+  cursor: pointer;
+  transition-duration: 500ms;
+}
+
+.button-pill-yellow:hover{
+  font-size: 15px;
+  background:#eb9b34;
+  border: 0.1em solid black;
+  box-shadow: none;
+}

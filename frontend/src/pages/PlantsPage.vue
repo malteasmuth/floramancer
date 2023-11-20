@@ -4,7 +4,7 @@
       <div class="hero-headers">
         <h1>This is your garden</h1>
         <h3>Always take good care for your green friends!</h3>
-        <button type="button">Plant a new beauty</button>
+        <button class="button-pill-yellow" type="button">Plant a new beauty</button>
       </div>
     </div>
     <div class="grid-wrapper">
@@ -12,7 +12,7 @@
         <img class="card-img-rounded" src="#">
         <h3>{{ plant.name }}</h3>
         <h3>{{ plant.species }}</h3>
-        <button>See details</button>
+        <button class="button-pill-yellow" type="button">See details</button>
       </div>
     </div>
   </div>
