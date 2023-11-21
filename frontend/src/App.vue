@@ -1,5 +1,5 @@
 <template>
-  <h1 class="placeholders">Navbar placeholder</h1>
+  <MyNavbar></MyNavbar>
   <router-view></router-view>
   <div class="placeholders">
     <h1>Footer placeholder</h1>
@@ -10,10 +10,13 @@
 </template>
 
 <script>
+  import MyNavbar from "./components/MyNavbar.vue";
+
   export default {
     name: "app",
-    components: {},
+    components: { MyNavbar },
   };
+
 </script>
 
 <style scoped>
