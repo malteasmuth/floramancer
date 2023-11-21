@@ -67,8 +67,13 @@ body{
   margin: auto;
 }
 
-.placeholders{
+.footer{
   text-align: center;
+  transition-duration: 500ms;
+}
+
+.footer span:hover{
+  color:#4bad74;
 }
 
 .button-pill-yellow{
