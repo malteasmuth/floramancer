@@ -6,11 +6,12 @@
       </div>
       <div class="plant-info">
         <h1>Look at you, still growing strong!</h1>
-        <h3>Name: Angela</h3>
-        <h3>Species: Cactus</h3>
-        <h3>Health: Smiling</h3>
-        <h3>Age: 2 years 11 months</h3>
-        <h3>Location: Co-working space</h3>
+        <h3>Name: {{ plant.name}} </h3>
+        <h3>Species: {{ plant.species }}</h3>
+        <h3>Health: {{ plant.health }}</h3>
+        <h3>Age: {{ plant.age }} years</h3>
+        <h3>Location:  {{ plant.location }}</h3>
+        <h3>Water every {{ plant.watering_interval }} days</h3>
         <button class="button-pill-yellow">Set schedule</button>
       </div>
     </div>
@@ -21,7 +22,16 @@
 
   import { plants } from "../devData";
 
+  const plant = plants.find(x => x.id === 1);
+  console.log(plant);
+
   export default {
     name: "PlantDetailsPage",
+    data() {
+      return {
+        plants,
+        plant
+      }
+    }
   }
 </script>

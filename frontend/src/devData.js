@@ -3,6 +3,9 @@ export const plants = [{
   name: "Angela",
   species: "Gum tree",
   age: 2,
+  location: "Desk",
+  health: "fine",
+  watering_interval: 2,
 }, {
   id: 6,
   name: "Peter",

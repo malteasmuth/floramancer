@@ -105,6 +105,10 @@ body{
   color: black;
 }
 
+.plant-info{
+  margin: auto;
+}
+
 .plant-img-container{
   border-radius: 10px;
   width: 70%;
