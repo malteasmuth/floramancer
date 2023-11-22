@@ -23,7 +23,6 @@
   import { plants } from "../devData";
 
   const plant = plants.find(x => x.id === 1);
-  console.log(plant);
 
   export default {
     name: "PlantDetailsPage",

@@ -25,14 +25,19 @@
 </template>
 
 <script>
-  import { plants } from "../devData";
+  import axios from 'axios';
 
   export default {
     name: "PlantsPage",
     data() {
       return {
-        plants,
+        plants: [],
       }
+    },
+    async created(){
+      const response = await axios.get('/api/plants');
+      const plants = response.data;
+      this.plants = plants;
     }
   }
 </script>
