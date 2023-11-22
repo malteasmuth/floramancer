@@ -1,19 +1,20 @@
 <template>
-  <h1 class="placeholders">Navbar placeholder</h1>
+  <NewPlantForm></NewPlantForm>
+  <MyNavbar></MyNavbar>
   <router-view></router-view>
-  <div class="placeholders">
-    <h1>Footer placeholder</h1>
-    <p>Site in development </p>
-    <font-awesome-icon :icon="['fas', 'seedling']" />
-    <p>Picture by Kaufmann Mercantile on Unsplash</p>
-  </div>
+  <Footer></Footer>
 </template>
 
 <script>
+  import MyNavbar from "./components/MyNavbar.vue";
+  import Footer from "./components/Footer.vue";
+  import NewPlantForm from "./components/NewPlantForm.vue";
+
   export default {
     name: "app",
-    components: {},
+    components: { MyNavbar, Footer, NewPlantForm },
   };
+
 </script>
 
 <style scoped>

@@ -67,8 +67,13 @@ body{
   margin: auto;
 }
 
-.placeholders{
+.footer{
   text-align: center;
+  transition-duration: 500ms;
+}
+
+.footer span:hover{
+  color:#4bad74;
 }
 
 .button-pill-yellow{
@@ -88,4 +93,71 @@ body{
   background:#eb9b34;
   border: 0.1em solid black;
   box-shadow: none;
+}
+
+.plant-details-container{
+  height: 90vh;
+  background-color: #C4A484;
+  margin: auto;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+}
+
+.plant-info{
+  margin: auto;
+}
+
+.plant-img-container{
+  border-radius: 10px;
+  width: 70%;
+  background-image:
+    url("./assets/images/the-bialons-MVCu1JIYuoM-unsplash.jpg");
+  background-size: cover;
+  background-position: 15%;
+  clip-path: ellipse(350px 450px at 20%);
+  transition-duration: 500ms;
+}
+
+.navbar-logo-square{
+  height: 70px;
+  width: 70px;
+  border-radius: 15%;
+}
+
+.navbar-wrapper{
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-items:last baseline;
+  margin-bottom: 6px;
+}
+
+.navbar-image-wrapper{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-menu-wrapper{
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar-wrapper a{
+  text-decoration: none;
+  color: white;
+  transition-duration: 500ms;
+}
+
+.navbar-wrapper a:hover{
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #4bad74;
+  border-radius: 10px;
+  padding: 5px;
 }
