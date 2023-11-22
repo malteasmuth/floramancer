@@ -19,18 +19,20 @@
 </template>
 
 <script>
-
-  import { plants } from "../devData";
-
-  const plant = plants.find(x => x.id === 1);
+  import axios from "axios";
 
   export default {
     name: "PlantDetailsPage",
     data() {
       return {
-        plants,
-        plant
+        plant: {},
       }
+    },
+    async created(){
+      console.log(this.$route.params.id);
+      const response = await axios.get(`/api/plants/${this.$route.params.id}`);
+      const plant = response.data;
+      this.plant = plant;
     }
   }
 </script>
