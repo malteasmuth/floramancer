@@ -1,7 +1,7 @@
 <template>
-  <NewPlantForm></NewPlantForm>
   <MyNavbar></MyNavbar>
   <router-view></router-view>
+  <NewPlantForm></NewPlantForm>
   <Footer></Footer>
 </template>
 

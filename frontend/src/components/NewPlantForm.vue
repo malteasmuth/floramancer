@@ -1,14 +1,15 @@
 <template>
-
-  <div class="form-wrapper">
-    <form class="form">
-      <input type="text" required v-model="name" placeholder="name">
-      <input type="text" required v-model="species" placeholder="species">
-      <button type="submit" class="button-pill-yellow">Done!</button>
-    </form>
-
-    <p>Name: {{ name }} </p>
-    <p>Species {{ species }} </p>
+  <div class="base">
+    <div class="form-wrapper">
+      <form class="form">
+        <h2>Add a new plant to your collection</h2>
+        <input type="text" required v-model="name" placeholder="name">
+        <input type="text" required v-model="species" placeholder="species">
+        <input type="text" required v-model="location" placeholder="location">
+        <input type="number" required v-model="wateringInterval" placeholder="watering interval">
+        <button type="submit" class="submit-button">Done!</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -17,7 +18,9 @@
     data(){
       return {
         name: "",
-        species: ""
+        species: "",
+        location: "",
+        wateringInterval: "",
       }
     }
   }
@@ -25,14 +28,21 @@
 
 <style>
 
+.base{
+  background-color: #9c9376;
+  height: 600px;
+  display: flex;
+  color: black;
+}
 .form-wrapper{
   display: block;
   margin: auto;
-  width: 50%;
+  width: 40%;
   padding: 20px;
-  background-color: #C4A484;
-  border-radius: 20px;
+  background-color: #d1c9ae;
+  border-radius: 10px;
   justify-content: space-between;
+  box-shadow: 2px 2px 2px black;
 }
 
 .form{
@@ -40,16 +50,29 @@
   flex-flow: column;
   align-items: center;
   margin: auto;
+  color: black;
 }
 
 input{
   border-radius: 10px;
-  background-color: #4bad74;
+  background-color: #d1c9ae;
   font-size: 18px;
   width: 250px;
   padding: 10px;
   margin: 10px;
   outline: none;
+  color:
+}
+
+.submit-button{
+  width: 250px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #bda75e;
+  border-radius: 10px;
+  margin: 10px;
+  outline: none;
+  cursor: pointer;
 }
 
 </style>
