@@ -147,17 +147,3 @@ body{
   align-items: center;
 }
 
-.navbar-wrapper a{
-  text-decoration: none;
-  color: white;
-  transition-duration: 500ms;
-}
-
-.navbar-wrapper a:hover{
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #4bad74;
-  border-radius: 10px;
-  padding: 5px;
-}

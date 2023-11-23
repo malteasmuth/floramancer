@@ -12,6 +12,7 @@ import "./main.css";
 import * as VueRouter from "vue-router";
 import PlantsPage from "./pages/PlantsPage.vue";
 import PlantDetailsPage from "./pages/PlantDetailsPage.vue";
+import PageNotFound from "./pages/PageNotFound.vue"
 
 library.add(faSeedling)
 
@@ -26,6 +27,10 @@ createApp(App)
   {
     path: "/plants/:id",
     component: PlantDetailsPage,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: PageNotFound,
   }
 ]
 }))

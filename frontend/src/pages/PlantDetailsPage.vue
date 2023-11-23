@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="plant">
     <div class="plant-details-container">
       <div class="plant-img-container">
         <div class="plant-img"></div>
@@ -16,10 +16,14 @@
       </div>
     </div>
   </div>
+  <div v-else>
+    <PageNotFound></PageNotFound>
+  </div>
 </template>
 
 <script>
   import axios from "axios";
+  import PageNotFound from "./PageNotFound.vue";
 
   export default {
     name: "PlantDetailsPage",
@@ -33,6 +37,9 @@
       const response = await axios.get(`/api/plants/${this.$route.params.id}`);
       const plant = response.data;
       this.plant = plant;
+    },
+    components: {
+      PageNotFound,
     }
   }
 </script>

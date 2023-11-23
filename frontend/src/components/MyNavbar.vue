@@ -1,14 +1,23 @@
 <template>
   <div class="navbar-wrapper">
     <div class="navbar-image-wrapper">
-      <img src="../assets/images/the-bialons-MVCu1JIYuoM-unsplash.jpg" class="navbar-logo-square">
+      <router-link to="/">
+        <img
+          src="../assets/images/the-bialons-MVCu1JIYuoM-unsplash.jpg"
+          class="navbar-logo-square">
+      </router-link>
     </div>
-      <h1>Floramancer</h1>
+      <router-link to="/"
+        class="menu-button-name"><h1>Floramancer</h1></router-link>
       <div class="navbar-menu-wrapper">
-      <a href="/">Home</a>
-      <a href="/plants">Your Plants</a>
-      <a href="/plants">Schedule</a>
-      <a href="#">About</a>
+      <router-link to="/"
+        class="menu-button">Home</router-link>
+      <router-link to="/plants"
+        class="menu-button">Your Plants</router-link>
+      <router-link to="#"
+        class="menu-button">Schedule</router-link>
+      <router-link to="#"
+        class="menu-button">About</router-link>
       <button class="button-pill-yellow">Log in</button>
     </div>
   </div>
@@ -19,3 +28,26 @@
     name: "MyNavbar",
   }
 </script>
+
+<style>
+
+.menu-button{
+  text-decoration: none;
+  color: white;
+  transition-duration: 500ms;
+}
+
+.menu-button:hover{
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #4bad74;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.menu-button-name{
+  text-decoration: none;
+  color: white;
+}
+</style>

@@ -17,7 +17,9 @@
         <div class="grid-card-infos">
           <h3>{{ plant.name }}</h3>
           <h3>{{ plant.species }}</h3>
-          <button class="button-pill-yellow" type="button">See details</button>
+          <router-link :to="'/plants/' + plant.id">
+            <button class="button-pill-yellow" type="button">See details</button>
+          </router-link>
         </div>
       </div>
     </div>
