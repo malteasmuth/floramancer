@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
 const port = 5000;
-const db = require('./postgres-config');
-
+const db = require('./server/config/postgres-config');
+const { sq } = require("./server/config/db");
+const Plant = require("./server/models/Plants");
 app.use(express.json()); // Allow JSON queries
 
 // Define routes and middleware
+
+// const newPlant = async () => {
+//   const jane = await Plant.create({ name: "Jane", species: "Plant", age: 21, location: "Working area" });
+//   console.log(jane.toJSON());
+// }
+
+// // newPlant();
 
 app.get('/', (req,res) =>{
   res.send("Hello world");
