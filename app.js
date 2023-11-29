@@ -25,33 +25,10 @@ app.get('/', (req, res) => {
 app.get('/api/plants', PlantsController.getAllPlants);
 
 // get one plant
-app.get('/api/plants/:id', (req, res) => {
-  const { id } = req.params;
-
-  db.pool.query('SELECT * FROM plants WHERE id=$1', [id], (error, result) => {
-    if (error) {
-      throw error;
-    }
-
-    res.status(200).send(result.rows[0]);
-  });
-});
+app.get('/api/plants/:id', PlantsController.findOnePlant);
 
 // create a new plant
-app.post('/api/plants', (req, res) => {
-  const { name, species } = req.body;
-
-  db.pool.query(
-    'INSERT INTO plants (name, species) VALUES ($1, $2)',
-    [name, species],
-    (error, result) => {
-      if (error) {
-        throw error;
-      }
-      res.status(200).send('Plant created successfully!');
-    }
-  );
-});
+app.post('/api/plants', PlantsController.newPlant);
 
 // update a plant
 app.patch('/api/plants/:id', (req, res) => {
