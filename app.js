@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const db = require('./server/config/postgres-config');
-const { sq } = require("./server/config/db");
-const Plant = require("./server/models/Plants");
+
+const Plant = require('./server/models/Plants');
+const PlantsController = require('./server/controllers/PlantsController');
+
 app.use(express.json()); // Allow JSON queries
 
 // Define routes and middleware
@@ -15,67 +17,39 @@ app.use(express.json()); // Allow JSON queries
 
 // // newPlant();
 
-app.get('/', (req,res) =>{
-  res.send("Hello world");
+app.get('/', (req, res) => {
+  res.send('Hello world');
 });
 
 // get all plants
-app.get('/api/plants', (req, res) => {
-
-  db.pool.query('SELECT * FROM plants;', (error, result) => {
-    if(error) {
-      throw error;
-    }
-
-    res.status(201).send(result.rows);
-  });
-});
+app.get('/api/plants', PlantsController.getAllPlants);
 
 // get one plant
-app.get('/api/plants/:id', (req, res) =>{
-
-  const { id } = req.params;
-
-  db.pool.query('SELECT * FROM plants WHERE id=$1', [id], (error, result) =>{
-    if(error) {
-      throw error;
-    }
-
-    res.status(200).send(result.rows[0]);
-  });
-})
+app.get('/api/plants/:id', PlantsController.findOnePlant);
 
 // create a new plant
-app.post('/api/plants', (req, res) => {
-
-  const { name, species } = req.body;
-
-  db.pool.query('INSERT INTO plants (name, species) VALUES ($1, $2)', [name, species], (error, result) =>{
-    if(error) {
-      throw error;
-    }
-    res.status(200).send("Plant created successfully!");
-  });
-});
+app.post('/api/plants', PlantsController.newPlant);
 
 // update a plant
 app.patch('/api/plants/:id', (req, res) => {
-
   const { id } = req.params;
   const { name, species } = req.body;
 
-  db.pool.query('UPDATE plants SET name = $1, species = $2 WHERE id = $3', [name, species, id], (error, result) => {
-    if(error) throw error;
-    res.status(200).send("Plant updated!");
-  });
+  db.pool.query(
+    'UPDATE plants SET name = $1, species = $2 WHERE id = $3',
+    [name, species, id],
+    (error, result) => {
+      if (error) throw error;
+      res.status(200).send('Plant updated!');
+    }
+  );
 });
 
 // delete a plant
 app.delete('/api/plants/:id', (req, res) => {
-
   const { id } = req.params;
 
-  db.pool.query('DELETE FROM plants WHERE id=$1', [id], (error, result) =>{
+  db.pool.query('DELETE FROM plants WHERE id=$1', [id], (error, result) => {
     if (error) throw error;
     res.status(200).send(`Plant with id ${id} deleted successfully`);
   });
