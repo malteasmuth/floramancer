@@ -1,10 +1,9 @@
 const Plant = require('../models/Plants');
 
 // Get all plants
-const getAllPlants = async (req, res) => {
+const GetAllPlants = async (req, res) => {
   try {
     const plants = await Plant.findAll();
-    console.log('Success!');
     res.status(200).json(plants);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
@@ -12,7 +11,7 @@ const getAllPlants = async (req, res) => {
 };
 
 // Get one plant
-const findOnePlant = async (req, res) => {
+const FindOnePlant = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -28,17 +27,17 @@ const findOnePlant = async (req, res) => {
 };
 
 // Post a new plant
-const newPlant = async (req, res) => {
-  const { name, species, age, location } = req.body;
+const NewPlant = async (req, res) => {
+  const { name, species, location, age } = req.body;
 
   try {
     const newPlant = await Plant.create({
-      name,
-      species,
-      age,
-      location,
+      name: name,
+      species: species,
+      location: location,
+      age: age,
     });
-    console.log(newPlant.toJSON());
+    console.log(newPlant);
     if (!newPlant) {
       return res.status(404).json({ error: 'Could not be saved' });
     }
@@ -49,4 +48,4 @@ const newPlant = async (req, res) => {
   }
 };
 
-module.exports = { getAllPlants, findOnePlant, newPlant };
+module.exports = { GetAllPlants, FindOnePlant, NewPlant };
