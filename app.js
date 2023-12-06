@@ -3,32 +3,24 @@ const app = express();
 const port = 5000;
 const db = require('./server/config/postgres-config');
 
-const Plant = require('./server/models/Plants');
 const PlantsController = require('./server/controllers/PlantsController');
 
 app.use(express.json()); // Allow JSON queries
 
 // Define routes and middleware
 
-// const newPlant = async () => {
-//   const jane = await Plant.create({ name: "Jane", species: "Plant", age: 21, location: "Working area" });
-//   console.log(jane.toJSON());
-// }
-
-// // newPlant();
-
 app.get('/', (req, res) => {
   res.send('Hello world');
 });
 
 // get all plants
-app.get('/api/plants', PlantsController.getAllPlants);
+app.get('/api/plants', PlantsController.GetAllPlants);
 
 // get one plant
-app.get('/api/plants/:id', PlantsController.findOnePlant);
+app.get('/api/plants/:id', PlantsController.FindOnePlant);
 
 // create a new plant
-app.post('/api/plants', PlantsController.newPlant);
+app.post('/api/plants', PlantsController.NewPlant);
 
 // update a plant
 app.patch('/api/plants/:id', (req, res) => {

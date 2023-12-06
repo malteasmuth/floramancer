@@ -6,8 +6,8 @@
         <input type="text" required v-model="name" placeholder="name">
         <input type="text" required v-model="species" placeholder="species">
         <input type="text" required v-model="location" placeholder="location">
-        <input type="number" required v-model="wateringInterval" placeholder="watering interval">
-        <button @click="addPlant" type="submit" class="submit-button">Done!</button>
+        <input type="number" required v-model="age" placeholder="age">
+        <button @click="addPlant()" type="button" class="submit-button">Done!</button>
       </form>
     </div>
   </div>
@@ -22,12 +22,13 @@ import axios from 'axios';
         name: "",
         species: "",
         location: "",
-        wateringInterval: "",
+        age: "",
       }
     },
     methods: {
       async addPlant(){
-        await axios.post('/api/plants', { name: this.name, species: this.species});
+        console.log("Method started");
+        await axios.post('/api/plants', { name: this.name, species: this.species, location: this.location, age: this.age});
         alert("Added to collection");
       }
     }
